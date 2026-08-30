@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+
   :root{
     --paper:      #faf6f1;
     --paper-card: #fffdfb;
@@ -19,6 +20,7 @@
     --shadow:     rgba(74, 50, 38, 0.14);
     color-scheme: light;
   }
+
   *{ box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
 
   html,body{
@@ -78,7 +80,6 @@
     animation-delay:.12s;
   }
 
-  /* --- Чек --- */
   .receipt-wrap{
     opacity:0;
     transform:translateY(-14px);
@@ -243,7 +244,6 @@
     opacity:.55;
   }
 
-  /* --- Калькулятор стоимости --- */
   .calc-wrap{
     margin-top:22px;
     opacity:0;
@@ -389,14 +389,14 @@
 
         <div class="recipient">
           <p class="label">Получатель</p>
-          <p class="name" id="recipientName">Иванова Мария Сергеевна</p>
+          <p class="name" id="recipientName">Гарбар А******** Е*******</p>
         </div>
 
         <div class="rows" id="rows"></div>
 
         <div class="purpose" id="purposeBlock">
           <p class="label">Назначение платежа</p>
-          <p class="value" id="purposeValue">Оплата по договору № 000 от 00.00.0000</p>
+          <p class="value" id="purposeValue">Приходи ко мне еще!</p>
         </div>
 
       </div>
@@ -432,25 +432,19 @@
   <div class="toast" id="toast">Скопировано</div>
 
 <script>
-  /* ================================================================
-     ЗАМЕНИТЕ НА СВОИ ДАННЫЕ
-     Отредактируйте значения ниже — остальной код трогать не нужно.
-     Поле purpose необязательно — можно оставить пустой строкой "",
-     тогда блок "Назначение платежа" скроется автоматически.
-     ================================================================ */
   const DATA = {
-    recipient: "Иванова Мария Сергеевна",
+    recipient: "Г***** А******** Е********",
     fields: [
-      { label: "Номер телефона (СБП)", value: "+7 900 123-45-67" },
-      { label: "Банк получателя",       value: "АО «Тинькофф Банк»" },
-      { label: "Номер счёта",           value: "40817 810 9 9990 123456" },
-      { label: "ИНН",                   value: "771234567890" },
-      { label: "БИК",                   value: "044525974" },
-      { label: "Корр. счёт",            value: "30101810145250000974" },
+      { label: "IBAN (ерип альфа-банк)", value: "BY48ALFA3014325UXH0010270000" },
+      { label: "Альфа-банк",       value: "5208 1300 0620 0962" },
+      { label: "Номер счёта (ерип белинвест)",           value: "BY66BLBB30341200000009748108" },
+      { label: "Номер договора \n (ерип белинвест)",                   value: "90kBYN-FEA4DC" },
     ],
-    purpose: "Оплата по договору № 000 от 00.00.0000"
+    purpose: "Приходи ко мне ещё!"
   };
+
   const PRICE_PER_SHEET = 0.4;
+
   document.getElementById('recipientName').textContent = DATA.recipient;
 
 
@@ -520,6 +514,7 @@
     document.body.removeChild(ta);
     cb();
   }
+
   const sheetsInput = document.getElementById('sheetsInput');
   const calcResult = document.getElementById('calcResult');
 
