@@ -8,12 +8,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-
-  /* ============================================================
-     ДАННЫЕ ДЛЯ ОПЛАТЫ — редактируйте прямо здесь, в объекте DATA
-     в блоке <script> внизу файла (искать "ЗАМЕНИТЕ НА СВОИ ДАННЫЕ")
-     ============================================================ */
-
   :root{
     --paper:      #faf6f1;
     --paper-card: #fffdfb;
@@ -25,7 +19,6 @@
     --shadow:     rgba(74, 50, 38, 0.14);
     color-scheme: light;
   }
-
   *{ box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
 
   html,body{
@@ -457,11 +450,7 @@
     ],
     purpose: "Оплата по договору № 000 от 00.00.0000"
   };
-
-  // Цена за один лист, в рублях — измените при необходимости
   const PRICE_PER_SHEET = 0.4;
-  /* ================================================================ */
-
   document.getElementById('recipientName').textContent = DATA.recipient;
 
 
@@ -531,8 +520,6 @@
     document.body.removeChild(ta);
     cb();
   }
-
-  /* --- Расчёт стоимости по количеству листов --- */
   const sheetsInput = document.getElementById('sheetsInput');
   const calcResult = document.getElementById('calcResult');
 
